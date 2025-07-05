@@ -44,14 +44,14 @@ Ideal para praticar e demonstrar:
 ## 🖼️ Screenshots
 
 ### Modo Claro
-![Light mode](Public/Img-Client/White.png)
+<img src="Public/Img-Client/White.png" alt="Light mode" width="500" height="500"/> 
 
-![Light mode](Public/Img-Client/White-Mobile.png)
+<img src="Public/Img-Client/White-Mobile.png" alt="Light mode mobile" width="300" height="300"/>
 
 ### Modo Escuro
-![Dark mode](Public/Img-Client/Dark.png)
+<img src="Public/Img-Client/Dark.png" alt="Dark mode" width="300" height="300"/> 
 
-![Dark mode](Public/Img-Client/Dark-Mobile.png)
+<img src="Public/Img-Client/Dark-Mobile.png" alt="Dark mode mobile" width="500" height="500"/>
 ---
 
 ## 🚀 Instalação
