@@ -45,8 +45,7 @@ You only need a modern web browser to run this project.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/YOUR-USERNAME/Dynamic-CSS-Variables.git
-   ```
+   git clone https://github.com/Taunt-byte/Dynamic-CSS-Variables.git
 
 2. Navigate to the project directory:
 
