@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Experimente variáveis CSS e visualize o código gerado em tempo real.">
+  <title>Dynamic CSS Variables</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <h1>Dynamic CSS Variables</h1>
+    <p>Personalize a imagem e veja o código CSS em tempo real.</p>
+  </header>
+
+  <main class="container">
+    <section class="controls" aria-labelledby="controls-title">
+      <h2 id="controls-title">Personalizar imagem</h2>
+
+      <div class="control-group">
+        <label for="spacing">Espaçamento: <output id="spacing-value">10px</output></label>
+        <input type="range" id="spacing" min="0" max="60" value="10">
+      </div>
+
+      <div class="control-group">
+        <label for="blur">Desfoque: <output id="blur-value">0px</output></label>
+        <input type="range" id="blur" min="0" max="20" value="0">
+      </div>
+
+      <div class="control-group">
+        <label for="radius">Bordas arredondadas: <output id="radius-value">12px</output></label>
+        <input type="range" id="radius" min="0" max="100" value="12">
+      </div>
+
+      <div class="control-group">
+        <label for="base">Cor de fundo</label>
+        <input type="color" id="base" value="#ffc600">
+      </div>
+
+      <button type="button" id="reset-button" class="secondary-button">
+        Restaurar padrões
+      </button>
+    </section>
+
+    <section class="workspace" aria-label="Pré-visualização e código CSS">
+      <article class="preview-panel">
+        <h2>Pré-visualização</h2>
+
+        <div class="image-frame">
+          <img
+            id="preview-image"
+            class="preview-image"
+            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+            alt="Paisagem de montanhas, lago e natureza"
+          >
+        </div>
+
+        <p class="hint">Altere os controles para experimentar diferentes estilos.</p>
+      </article>
+
+      <article class="code-panel">
+        <div class="code-header">
+          <h2>CSS gerado</h2>
+          <button type="button" id="copy-button" class="copy-button">
+            Copiar CSS
+          </button>
+        </div>
+
+        <pre><code id="css-output"></code></pre>
+        <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>Projeto de estudo de HTML, CSS e JavaScript.</p>
+  </footer>
+</body>
+</html>

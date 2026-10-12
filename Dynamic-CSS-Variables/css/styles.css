@@ -1,0 +1,519 @@
+
+/* ========================================
+   1. VARIÁVEIS GLOBAIS
+======================================== */
+
+:root {
+  --base-color: #ffc600;
+  --spacing: 10px;
+  --blur: 0px;
+  --radius: 12px;
+
+  --bg-primary: #0b1020;
+  --bg-secondary: #11182b;
+  --bg-card: rgba(21, 29, 49, 0.85);
+  --border-color: rgba(148, 163, 184, 0.16);
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+
+  --accent: #8b5cf6;
+  --accent-hover: #a78bfa;
+  --blue: #38bdf8;
+  --success: #34d399;
+
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================
+   2. RESET E CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  padding: 40px 24px;
+  overflow-x: hidden;
+
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text-primary);
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(139, 92, 246, 0.15),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 100% 20%,
+      rgba(56, 189, 248, 0.10),
+      transparent 30%
+    ),
+    var(--bg-primary);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: white;
+  background: var(--accent);
+}
+
+/* ========================================
+   3. CABEÇALHO
+======================================== */
+
+.page-header {
+  max-width: 900px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin-bottom: 14px;
+
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+
+  background: linear-gradient(
+    100deg,
+    #c4b5fd,
+    #818cf8,
+    #38bdf8
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.page-header p {
+  max-width: 600px;
+  margin: 0 auto;
+
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ========================================
+   4. CONTAINER PRINCIPAL
+======================================== */
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   5. PAINEL DE CONTROLES
+======================================== */
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  gap: 26px;
+
+  align-items: end;
+
+  margin-bottom: 28px;
+  padding: 28px;
+
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.controls h2 {
+  grid-column: 1 / -1;
+
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-color);
+
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* Cada controle */
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  min-width: 0;
+}
+
+.control-group label {
+  color: #dbe4f0;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.control-group output {
+  display: inline-block;
+  margin-left: 5px;
+
+  color: #c4b5fd;
+  font-weight: 700;
+}
+
+/* Sliders */
+
+.control-group input[type="range"] {
+  width: 100%;
+  height: 6px;
+
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+/* Seletor de cores */
+
+.control-group input[type="color"] {
+  width: 100%;
+  height: 42px;
+  padding: 4px;
+
+  cursor: pointer;
+
+  background: #0b1020;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+}
+
+.control-group input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 2px;
+}
+
+.control-group input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 6px;
+}
+
+/* ========================================
+   6. BOTÕES
+======================================== */
+
+.secondary-button,
+.copy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.secondary-button {
+  background: #252d43;
+  border-color: var(--border-color);
+}
+
+.secondary-button:hover {
+  background: #333d58;
+  transform: translateY(-2px);
+}
+
+.copy-button {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  box-shadow: 0 5px 18px rgba(139, 92, 246, 0.2);
+}
+
+.copy-button:hover {
+  background: linear-gradient(135deg, #a78bfa, #818cf8);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+.secondary-button:active,
+.copy-button:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   7. ÁREA DE TRABALHO
+======================================== */
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 26px;
+  align-items: stretch;
+}
+
+.preview-panel,
+.code-panel {
+  min-width: 0;
+  padding: 28px;
+
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+
+  transition: border-color 0.25s ease;
+}
+
+.preview-panel:hover,
+.code-panel:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.preview-panel h2,
+.code-panel h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* ========================================
+   8. PRÉ-VISUALIZAÇÃO DA IMAGEM
+======================================== */
+
+.image-frame {
+  overflow: hidden;
+
+  margin-top: 22px;
+
+  background: #080c17;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+}
+
+.preview-image {
+  display: block;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+
+  padding: var(--spacing);
+  filter: blur(var(--blur));
+  border-radius: var(--radius);
+  background-color: var(--base-color);
+
+  transition:
+    padding 0.15s ease,
+    border-radius 0.15s ease,
+    filter 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.hint {
+  margin-top: 18px;
+
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* ========================================
+   9. EDITOR DE CÓDIGO CSS
+======================================== */
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+.code-header h2 {
+  margin: 0;
+}
+
+.code-header h2::before {
+  content: "";
+  display: inline-block;
+
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+
+  vertical-align: middle;
+
+  background: var(--success);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.5);
+}
+
+/* Bloco de código */
+
+.code-panel pre {
+  min-height: 280px;
+  padding: 24px;
+
+  overflow-x: auto;
+
+  color: #dbeafe;
+  background: #080c17;
+
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 14px;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+
+  font-family: "Cascadia Code", Consolas, Monaco, monospace;
+  font-size: 0.9rem;
+  line-height: 2;
+}
+
+#css-output {
+  color: #c4b5fd;
+}
+
+/* Mensagem de cópia */
+
+.copy-status {
+  min-height: 22px;
+  margin-top: 14px;
+
+  color: var(--success);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ========================================
+   10. RODAPÉ
+======================================== */
+
+.page-footer {
+  max-width: 1400px;
+  margin: 36px auto 0;
+  padding-top: 24px;
+
+  color: #64748b;
+  font-size: 0.85rem;
+  text-align: center;
+
+  border-top: 1px solid var(--border-color);
+}
+
+/* ========================================
+   11. RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 1100px) {
+  .controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .secondary-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 850px) {
+  body {
+    padding: 32px 18px;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-image {
+    height: 350px;
+  }
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 24px 12px;
+  }
+
+  .page-header {
+    margin-bottom: 28px;
+  }
+
+  .page-header h1 {
+    letter-spacing: -1px;
+  }
+
+  .controls,
+  .preview-panel,
+  .code-panel {
+    padding: 18px;
+    border-radius: 15px;
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .preview-image {
+    height: 260px;
+  }
+
+  .code-panel pre {
+    min-height: 230px;
+    padding: 16px;
+    font-size: 0.78rem;
+  }
+
+  .code-header {
+    align-items: flex-start;
+  }
+
+  .copy-button {
+    padding: 10px 12px;
+  }
+}
+
+/* ========================================
+   12. ACESSIBILIDADE
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

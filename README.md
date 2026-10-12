@@ -1,95 +1,126 @@
-# Instagrama
+# Dynamic CSS Variables
 
-Clone de uma tela de login inspirado em redes sociais modernas, como Instagram e Facebook.  
-Este projeto foi desenvolvido com o framework **Next.js** e estilizado com **Tailwind CSS**, oferecendo suporte completo a **modo claro e escuro**. A proposta é demonstrar boas práticas de desenvolvimento front-end com foco em design moderno, responsividade e acessibilidade.
+A responsive web application that allows users to dynamically customize CSS variables and see the changes in real time. Built with HTML, CSS, and vanilla JavaScript, this project demonstrates how CSS custom properties can be controlled through interactive form elements.
 
----
+## Features
 
-## 📑 Tabela de Conteúdos
-<!--ts-->
-* [📌 Sobre](#sobre)
-  * [💡 Conceitos aplicados](#conceitos-aplicados)
-  * [🖼️ Screenshots](#screenshots)
-* [🚀 Instalação](#instalação)
-* [🛠 Tecnologias utilizadas](#tecnologias-utilizadas)
-<!--te-->
+- **Dynamic Spacing:** Adjust the spacing around the preview image.
+- **Blur Effect:** Control the image blur intensity.
+- **Border Radius:** Customize the rounding of the image corners.
+- **Color Customization:** Change the background and accent color using a color picker.
+- **Real-Time Preview:** See changes immediately without reloading the page.
+- **Reset Settings:** Restore all controls to their default values.
+- **Responsive Design:** Works on desktop and mobile devices.
+- **No Dependencies:** Built with vanilla JavaScript and standard web technologies.
 
----
+## Technologies Used
 
-## 📌 Sobre
+- HTML5
+- CSS3
+- JavaScript (Vanilla JS)
+- CSS Custom Properties
+- DOM Manipulation
+- Event Listeners
 
-O **Instagrama** é uma interface de tela de login responsiva que simula o ambiente visual de grandes redes sociais. 
+## Project Structure
 
-Ideal para praticar e demonstrar:
-
-- Design de UI moderno com Tailwind;
-- Alternância de temas (light/dark mode);
-- Estrutura de projeto com Next.js;
-- Organização semântica e acessível de layout;
-- Uso de componentes reutilizáveis e boas práticas de React/JSX.
-
----
-
-## 💡 Conceitos aplicados
-
-- 🧱 **Componentização**: separação clara entre header, main e footer;
-- 🌗 **Modo escuro/claro**: usando utilitários `dark:` do Tailwind CSS;
-- 🧭 **Responsividade**: layout adaptado para diferentes tamanhos de tela;
-- 🔒 **Acessibilidade**: uso correto de `label`, `htmlFor`, placeholders e `type="password"`;
-- 🎨 **Design moderno**: cores suaves, tipografia legível e hierarquia visual clara;
-- 📄 **Semântica HTML5**: uso de `<header>`, `<main>`, `<section>`, `<footer>`.
-
----
-
-## 🖼️ Screenshots
-
-### Modo Claro
-<img src="Public/Img-Client/White.png" alt="Light mode" width="500" height="500"/> 
-
-<img src="Public/Img-Client/White-Mobile.png" alt="Light mode mobile" width="300" height="300"/>
-
-### Modo Escuro
-<img src="Public/Img-Client/Dark.png" alt="Dark mode" width="300" height="300"/> 
-
-<img src="Public/Img-Client/Dark-Mobile.png" alt="Dark mode mobile" width="500" height="500"/>
----
-
-## 🚀 Instalação
-
-Para rodar este projeto localmente, siga os passos abaixo:
-
-### 1. Clone o repositório
-
-```bash
-git clone https://github.com/Taunt-byte/Instagram-Login-Page.git
-cd client
+```text
+Dynamic-CSS-Variables/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── script.js
+└── README.md
 ```
 
-### 2. Instale as dependências
+## Getting Started
 
-```bash
-npm install
+### Prerequisites
+
+You only need a modern web browser to run this project.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/Dynamic-CSS-Variables.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd Dynamic-CSS-Variables
+   ```
+
+3. Open `index.html` in your browser.
+
+No additional dependencies or build tools are required.
+
+## How to Use
+
+1. Open the application in your browser.
+2. Adjust the **Spacing** slider to change the space around the image.
+3. Use the **Blur** slider to control the blur effect.
+4. Adjust the **Border Radius** slider to round the image corners.
+5. Select a new color using the color picker.
+6. Click **Reset Settings** to restore the default values.
+
+## How It Works
+
+The application uses CSS custom properties to control visual styles dynamically.
+
+For example, CSS variables are declared in the `:root` selector:
+
+```css
+:root {
+    --base-color: #38bdf8;
+    --spacing: 10px;
+    --blur: 0px;
+    --radius: 12px;
+}
 ```
 
-### 3. Inicie o servidor de desenvolvimento
+JavaScript updates these properties with the `style.setProperty()` method:
 
-```bash
-npm run dev
+```javascript
+document.documentElement.style.setProperty("--blur", "5px");
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000) para visualizar no navegador.
+Whenever a variable changes, the browser automatically updates the elements that use it.
 
----
+## Learning Objectives
 
-## 🛠 Tecnologias utilizadas
+This project helps practice:
 
-* [Next.js](https://nextjs.org/) — Framework React com SSR/SSG;
-* [React](https://reactjs.org/) — Biblioteca de interface declarativa;
-* [Tailwind CSS](https://tailwindcss.com/) — Framework utilitário de CSS moderno;
-* [Vercel](https://vercel.com/) — Hospedagem e deploy para apps Next.js.
+- Declaring and using CSS custom properties.
+- Manipulating CSS styles with JavaScript.
+- Handling user input with event listeners.
+- Updating interface elements in real time.
+- Working with range sliders and color inputs.
+- Creating responsive layouts with CSS Grid.
+- Organizing a project into separate HTML, CSS, and JavaScript files.
 
----
+## Future Improvements
 
-Feito com Lucas Neves
+- Add more customizable CSS properties.
+- Allow users to copy generated CSS variables.
+- Add a light and dark theme switcher.
+- Save user preferences using local storage.
+- Provide multiple preview elements.
+- Add a button to export the current settings as CSS code.
 
-[LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/)
+## Screenshot
+
+![Dynamic CSS Variables Preview](assets/preview.png)
+
+## Author
+
+**Lucas Neves**
+
+- GitHub: [@Taunt-byte](https://github.com/Taunt-byte)
+
+## License
+
+This project was created for educational and portfolio purposes. Add a `LICENSE` file if you want to specify the terms for using, modifying, and distributing the project.
